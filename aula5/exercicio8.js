@@ -6,17 +6,9 @@ imprima mensagens ao usuário de acordo com ele. Se:
 3. Status for igual a "entregue", imprima a mensagem "Pedido entregue"
 4. Se não for nenhum desses status, imprima "Aguarde, processando pedido..."
 */
-const pedidos = [
-   { id: 1, prato: "x-bacon", status: "entregue" },
-   { id: 2, prato: "sundae", status: "em preparo" },
-   { id: 3, prato: "fritas média", status: "a caminho" },
-   { id: 4, prato: "nuggets", status: "entregue" },
-   { id: 5, prato: "x-tudo", status: "a caminho" },
-   { id: 6, prato: "x_salada"},
- ];
 
-function statusEntregas() {
-   pedidos.forEach(function(pedido) {
+function statusEntregas(listaDePedidos) {
+   listaDePedidos.forEach(function(pedido) {
       switch (pedido.status) {
          case "em preparo":
             console.log(`Pedido: ${pedido.prato} - Seu pedido está sendo preparado`)
@@ -33,4 +25,13 @@ function statusEntregas() {
    })
 }
 
-statusEntregas();
+const pedidos = [
+   { id: 1, prato: "x-bacon", status: "entregue" },
+   { id: 2, prato: "sundae", status: "em preparo" },
+   { id: 3, prato: "fritas média", status: "a caminho" },
+   { id: 4, prato: "nuggets", status: "entregue" },
+   { id: 5, prato: "x-tudo", status: "a caminho" },
+   { id: 6, prato: "x_salada"},
+ ];
+
+statusEntregas(pedidos);
